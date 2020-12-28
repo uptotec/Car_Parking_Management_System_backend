@@ -15,7 +15,7 @@ app.use(cors({ origin: true, credentials: true }));
 
 app.use('/', router);
 
-app.listen(process.env.SERVER_PORT, async () => {
+app.listen(process.env.PORT, async () => {
   console.log('Server Running');
 
   try {
