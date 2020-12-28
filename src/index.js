@@ -16,7 +16,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use('/', router);
 
 app.listen(process.env.PORT, async () => {
-  console.log('Server Running');
+  console.log('Server Running on port', process.env.PORT);
 
   try {
     await initDatabase();
