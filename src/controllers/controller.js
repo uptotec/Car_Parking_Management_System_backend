@@ -17,7 +17,7 @@ exports.SearchCustomer = async (req, res) => {
 exports.SearchCar = async (req, res) => {
   const { Car_Plate_Numbers, Car_Plate_Letters } = req.body;
 
-  const car = await Customer.findOne({
+  const car = await Car.findOne({
     where: { Car_Plate_Letters, Car_Plate_Numbers },
   });
 
