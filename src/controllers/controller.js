@@ -68,7 +68,7 @@ exports.ReserveSlot = async (req, res) => {
     Hourly_Rate: rate,
   });
 
-  res.status(200).json({ paymentId: newPayment.id });
+  res.status(200).json({ paymentId: newPayment.id, slot: selectedSlot[0] });
 };
 
 exports.FinishPayment = async (req, res) => {
