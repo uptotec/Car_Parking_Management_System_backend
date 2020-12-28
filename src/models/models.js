@@ -2,7 +2,16 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize(
   'postgres://rfcowecjbimker:55ac24392a4e4548c6cbfd25190b0eacd40bab08b2f4bfb06fb1aec180354cc1@ec2-52-212-157-46.eu-west-1.compute.amazonaws.com:5432/d3nj1eqe01ncl0',
-  { dialect: 'postgres' }
+  {
+    dialect: 'postgres',
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // <<<<<<< YOU NEED THIS
+      },
+    },
+  }
 );
 
 const Customer = sequelize.define(
