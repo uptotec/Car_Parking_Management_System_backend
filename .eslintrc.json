@@ -9,7 +9,10 @@
     "ecmaVersion": 11
   },
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "comma-dangle": "off",
+    "camelcase": "off",
+    "object-curly-newline":"off"
   },
   "plugins": ["prettier"]
 }
