@@ -55,6 +55,7 @@ exports.ReserveSlot = async (req, res) => {
   const selectedSlot = await Slot.findAll({
     limit: 1,
     where: { Empty: true },
+    order: [['id', 'ASC']],
   });
 
   selectedSlot[0].Empty = false;
