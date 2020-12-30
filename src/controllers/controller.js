@@ -94,6 +94,11 @@ exports.FinishPayment = async (req, res) => {
     });
   }
 
+  if (payment.Completed === true) {
+    res.status(200).json(payment);
+    return;
+  }
+
   const nowTime = new Date();
   const duration = nowTime - new Date(payment.Entering_Time);
   const cost = (duration / 3600000) * payment.Hourly_Rate;
